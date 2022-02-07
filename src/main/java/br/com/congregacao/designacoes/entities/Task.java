@@ -25,8 +25,8 @@ public class Task {
     @Column(nullable = false)
     private TipoDesignacao tipoDeDesignacao;
 
-    @Column(nullable = false)
-    private Date dataDeDesignacao;
+    //@Column(nullable = false)
+    //private Date dataDeDesignacao;
 
 
 }

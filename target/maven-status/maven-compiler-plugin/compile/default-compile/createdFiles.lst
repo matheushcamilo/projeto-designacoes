@@ -1,0 +1,9 @@
+br/com/congregacao/designacoes/entities/Person$PersonBuilder.class
+br/com/congregacao/designacoes/entities/Person.class
+br/com/congregacao/designacoes/entities/Task$TaskBuilder.class
+br/com/congregacao/designacoes/controller/PersonController.class
+br/com/congregacao/designacoes/repository/PersonRepository.class
+br/com/congregacao/designacoes/DesignacoesApplication.class
+br/com/congregacao/designacoes/enums/TipoDesignacao.class
+br/com/congregacao/designacoes/service/PersonService.class
+br/com/congregacao/designacoes/entities/Task.class
