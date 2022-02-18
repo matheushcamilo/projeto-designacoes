@@ -28,4 +28,7 @@ public class PersonService {
     }
 
 
+    public Person getPersonByNome(String nome) {
+        return personRepository.findByNome(nome);
+    }
 }

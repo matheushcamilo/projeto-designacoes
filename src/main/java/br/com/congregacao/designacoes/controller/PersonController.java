@@ -19,14 +19,21 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @PostMapping("/")
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public String createPerson(@RequestBody Person person){
         return personService.createPerson(person);
     }
 
-    @GetMapping("/")
+    @GetMapping("/people")
     public List<Person> listAll(){
         return personService.listAll();
     }
+
+    @GetMapping("/person/{nome}")
+    public Person getPersonByNome(@PathVariable String nome){
+        return personService.getPersonByNome(nome);
+    }
+
+
 }
