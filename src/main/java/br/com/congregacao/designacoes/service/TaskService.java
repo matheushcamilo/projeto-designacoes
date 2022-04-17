@@ -1,10 +1,12 @@
 package br.com.congregacao.designacoes.service;
 
 import br.com.congregacao.designacoes.entities.Task;
+import br.com.congregacao.designacoes.enums.TipoDesignacao;
 import br.com.congregacao.designacoes.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskService {
@@ -18,8 +20,14 @@ public class TaskService {
         return taskRepository.findAll();
     }
 
-    public String saveTask(Task task) {
-        Task savedTask = taskRepository.save(task);
-        return "Designação de ID " + savedTask.getId() + " foi criada com sucesso";
+    public Optional<Task> getTaskById(Long id) {return taskRepository.findById(id);}
+
+    public String saveTask(List<Task> tasks) {
+        try {
+            for(Task task: tasks) taskRepository.save(task);
+            return tasks.size() + " tasks have been created!";
+        } catch (Exception e) {
+            return "An error occurred";
+        }
     }
 }

@@ -2,14 +2,16 @@ package br.com.congregacao.designacoes.controller;
 
 
 import br.com.congregacao.designacoes.entities.Task;
+import br.com.congregacao.designacoes.enums.TipoDesignacao;
 import br.com.congregacao.designacoes.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/task")
+@RequestMapping("/tasks")
 public class TaskController {
 
     private TaskService taskService;
@@ -25,7 +27,9 @@ public class TaskController {
     }
 
     @PostMapping()
-    public String createTask(@RequestBody Task task){
-        return taskService.saveTask(task);
+    public String createTask(@RequestBody List<Task> tasks){
+        return taskService.saveTask(tasks);
     }
+    @GetMapping(path = "/{id}")
+    public Optional<Task> getTaskById(@PathVariable Long id){return taskService.getTaskById(id);}
 }

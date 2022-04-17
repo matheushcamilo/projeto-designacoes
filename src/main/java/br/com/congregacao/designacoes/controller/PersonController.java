@@ -2,7 +2,6 @@ package br.com.congregacao.designacoes.controller;
 
 import br.com.congregacao.designacoes.entities.Person;
 import br.com.congregacao.designacoes.service.PersonService;
-import br.com.congregacao.designacoes.service.TaskService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,6 @@ import java.util.Set;
 public class PersonController {
 
     private PersonService personService;
-    private TaskService taskService;
 
     @Autowired
     public PersonController(PersonService personService) {
