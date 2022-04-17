@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -27,7 +28,12 @@ public class PersonController {
     }
 
     @GetMapping()
-    public Set<String> listAllPeople(){
+    public List<Person> listAllPeople(){
         return personService.listAllPeople();
+    }
+
+    @PatchMapping("/{personId}/{taskId}")
+    public String assignTaskToPerson(@PathVariable Long personId, @PathVariable  Long taskId){
+        return personService.assignTask(personId, taskId);
     }
 }
